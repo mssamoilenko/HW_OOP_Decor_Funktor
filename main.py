@@ -1,5 +1,5 @@
 import datetime
-#task1
+#task1,2
 def my_decor(func):
     def wrapper(*args, **kwargs):
         start_time = datetime.datetime.now()
@@ -11,7 +11,7 @@ def my_decor(func):
         return result
     return wrapper
 @my_decor
-def gener_numbers_list(a=0,b=1000):
+def gener_numbers_list(a,b):
     gnlist = []
     for i in range(a,b+1):
         if i < 2:
@@ -23,4 +23,4 @@ def gener_numbers_list(a=0,b=1000):
         if count_del == 2:
             gnlist.append(i)
     return gnlist
-gener_numbers_list()
+gener_numbers_list(200,15000)

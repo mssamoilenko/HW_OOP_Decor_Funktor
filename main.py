@@ -24,3 +24,22 @@ def gener_numbers_list(a,b):
             gnlist.append(i)
     return gnlist
 gener_numbers_list(200,15000)
+#task3
+def format_for_org_a(report_func):
+    def wrapper():
+        return f"Report for Org A: {report_func()}"
+    return wrapper
+def format_for_org_b(report_func):
+    def wrapper():
+        return f"Report for Org B: {report_func()}"
+    return wrapper
+def basic_report():
+    return "Revenue: $1000, Expenses: $500"
+@format_for_org_a
+def report_for_org_a():
+    return basic_report()
+@format_for_org_b
+def report_for_org_b():
+    return basic_report()
+print(report_for_org_a())
+print(report_for_org_b())
